@@ -29,10 +29,10 @@ struct ShapesView: View {
             
             DragableShape(
                 baseShape: Capsule(),
-                initialPostion: CGPoint(x: (geometry.size.width * 0.5) - 50, y: (geometry.size.height * 0.75) - 50),
+                initialPostion: CGPoint(x: (geometry.size.width * 0.5) - 60, y: (geometry.size.height * 0.75) - 40),
                 color: .blue
             )
-            .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+            .frame(width: 120, height: 80)
             
         }
         
