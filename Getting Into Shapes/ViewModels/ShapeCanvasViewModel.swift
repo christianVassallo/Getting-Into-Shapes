@@ -19,6 +19,9 @@ class ShapeCanvasViewModel: ObservableObject {
         DrawableShape.random()
     ]
     
+    // dict of shape id to position
+    var shapePositions: [String: CGPoint] = [:]
+    
     // creates a shap view given an index and a rect for it to be positioned in
     public func createDragableShape(for index: Int, in rect: CGRect) -> some View {
 
@@ -26,9 +29,15 @@ class ShapeCanvasViewModel: ObservableObject {
 
         let baseShape = shapeView(for: shape.shapeType)
         
-        let randPosition = randomPosition(for: shape, in: rect)
+        // retrieve stored shape position or generate a new position
+        let position = shapePositions[shape.id] ?? randomPosition(for: shape, in: rect)
         
-        return DragableShape(baseShape: baseShape, initialPostion: randPosition, color: shape.color)
+        // store shapes position for next render
+        if shapePositions[shape.id] == nil {
+            shapePositions[shape.id] = position
+        }
+        
+        return DragableShape(baseShape: baseShape, initialPostion: position, color: shape.color)
             .frame(width: shape.size.width, height: shape.size.height)
     }
     
@@ -48,6 +57,10 @@ class ShapeCanvasViewModel: ObservableObject {
             x: CGFloat.random(in: minX...max(minX, maxX)),
             y: CGFloat.random(in: minY...max(minY, maxY))
         )
+    }
+    
+    public func createRandomShape() {
+        shapes.append(DrawableShape.random())
     }
     
     private func shapeView(for type: DrawableShape.ShapeType) -> AnyShape {

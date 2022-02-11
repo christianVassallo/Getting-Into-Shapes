@@ -19,6 +19,7 @@ struct DrawableShape {
         }
     }
     
+    let id = UUID().uuidString
     let color: Color
     let size: CGSize
     let shapeType: ShapeType

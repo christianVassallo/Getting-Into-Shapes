@@ -13,17 +13,27 @@ struct ShapeCanvas: View {
     
     var body: some View {
         
-        GeometryReader { geometry in
-            
-            // ensure has size before rendering shapes
-            if (geometry.size != .zero) {
-                ForEach(0..<viewModel.shapes.count, id: \.self) { index in
-                    viewModel.createDragableShape(
-                        for: index,
-                        in: CGRect(x: geometry.frame(in: .global).minX, y: geometry.frame(in: .global).minY, width: geometry.size.width, height: geometry.size.height)
-                    )
+        VStack {
+            GeometryReader { geometry in
+                
+                // ensure has size before rendering shapes
+                if (geometry.size != .zero) {
+                    ForEach(0..<viewModel.shapes.count, id: \.self) { index in
+                        viewModel.createDragableShape(
+                            for: index,
+                            in: CGRect(x: geometry.frame(in: .global).minX, y: geometry.frame(in: .global).minY, width: geometry.size.width, height: geometry.size.height)
+                        )
+                    }
                 }
             }
+            
+            Button(
+                "Create Random Shape",
+                action: {
+                    viewModel.createRandomShape()
+                }
+            )
+            .padding(.bottom)
         }
     }
 }
