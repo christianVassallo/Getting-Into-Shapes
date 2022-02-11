@@ -34,6 +34,12 @@ struct ShapesView: View {
             )
             .frame(width: 120, height: 80)
             
+            DragableShape(
+                baseShape: Ellipse(),
+                initialPostion: CGPoint(x: (geometry.size.width * 0.75) - 40, y: (geometry.size.height * 0.30) - 120),
+                color: .orange
+            )
+            .frame(width: 80, height: 120)
         }
         
     }
