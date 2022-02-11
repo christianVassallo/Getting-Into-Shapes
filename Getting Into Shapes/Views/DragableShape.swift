@@ -14,6 +14,8 @@ struct DragableShape: View {
     let initialPostion: CGPoint
     let color: Color
     
+    // MARK: - position/ drag gesture
+    
     // the postion of the shape at the end of the previous dragGesture
     @State var updatedPostion: CGPoint?
     
@@ -39,10 +41,24 @@ struct DragableShape: View {
         return CGPoint(x: position.x + currentTranslation.width, y: position.y + currentTranslation.height)
     }
     
+    // MARK: - angle/ rotation gesture
+    
+    // the shapes current rotation angle in degress
+    @State var currentAngle: Angle = Angle.degrees(0.0)
+    
+    var shapRotateGesture: some Gesture {
+        RotationGesture()
+            .onChanged({ angle in
+                self.currentAngle = Angle.degrees(angle.degrees)
+            })
+    }
+    
     var body: some View {
         baseShape
             .fill(color)
+            .rotationEffect(currentAngle)
             .position(x: currentPosition.x, y: currentPosition.y)
             .gesture(shapDragGesture)
+            .gesture(shapRotateGesture)
     }
 }
