@@ -77,6 +77,8 @@ class ShapeCanvasViewModel: ObservableObject {
             return AnyShape(base: Triangle())
         case .hexagon:
             return AnyShape(base: Hexagon())
+        case .trapezoid:
+            return AnyShape(base: Trapezoid())
         }
     }
 }

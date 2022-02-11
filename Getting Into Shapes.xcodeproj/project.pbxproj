@@ -18,6 +18,7 @@
 		B44B5FF727B617EF007AF8C1 /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FF627B617EF007AF8C1 /* AnyShape.swift */; };
 		B46D608C27B667DC0052ED8D /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D608B27B667DC0052ED8D /* Triangle.swift */; };
 		B46D608F27B669040052ED8D /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D608E27B669040052ED8D /* Hexagon.swift */; };
+		B46D609227B669B40052ED8D /* Trapezoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D609127B669B40052ED8D /* Trapezoid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B44B5FF627B617EF007AF8C1 /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
 		B46D608B27B667DC0052ED8D /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		B46D608E27B669040052ED8D /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
+		B46D609127B669B40052ED8D /* Trapezoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trapezoid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				B46D608B27B667DC0052ED8D /* Triangle.swift */,
 				B46D608E27B669040052ED8D /* Hexagon.swift */,
+				B46D609127B669B40052ED8D /* Trapezoid.swift */,
 			);
 			path = "Custom Shapes";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				B44B5FD527B4E18D007AF8C1 /* Getting_Into_ShapesApp.swift in Sources */,
 				B44B5FE627B5EAFB007AF8C1 /* ShapeCanvas.swift in Sources */,
 				B46D608C27B667DC0052ED8D /* Triangle.swift in Sources */,
+				B46D609227B669B40052ED8D /* Trapezoid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
