@@ -26,6 +26,10 @@ struct ShapeCanvasViewModel {
             .frame(width: shape.size.width, height: shape.size.height)
     }
     
+    public func randomPosition(in rect: CGRect) -> CGPoint {
+        return CGPoint(x: CGFloat.random(in: 0...rect.width), y: CGFloat.random(in: 0...rect.height))
+    }
+    
     private func shapeView(for type: DrawableShape.ShapeType) -> AnyShape {
         switch type {
         case .circle:
