@@ -22,7 +22,7 @@ struct DragableShape: View {
     // the translation from a currently occuring dragGesture
     @State var currentTranslation: CGSize = CGSize(width: 0.0, height: 0.0)
     
-    var shapDragGesture: some Gesture {
+    var shapeDragGesture: some Gesture {
         DragGesture()
             // update the current translation
             .onChanged { value in
@@ -41,24 +41,59 @@ struct DragableShape: View {
         return CGPoint(x: position.x + currentTranslation.width, y: position.y + currentTranslation.height)
     }
     
-    // MARK: - angle/ rotation gesture
+    // MARK: - scale/ rotation gesture
     
-    // the shapes current rotation angle in degress
-    @State var currentAngle: Angle = Angle.degrees(0.0)
+    @State var storedAngle: Double = 0.0
+    @State var angleAdjustment: Double = 0.0
     
-    var shapRotateGesture: some Gesture {
-        RotationGesture()
-            .onChanged({ angle in
-                self.currentAngle = Angle.degrees(angle.degrees)
-            })
+    // the shapes current angle at any point is the previously `storedAngle`
+    //    + the `angleAdjustment` (from an active rotationGesture)
+    var currentAngle: Double {
+        return storedAngle + angleAdjustment
+    }
+    
+    @State var storedScale: CGFloat = 1.0
+    @State var scaleAdjustment: CGFloat = 1.0
+    
+    // the shapes current scale at any point is the previously `storedScale`
+    //    + the diff value of the `angleAdjustment` (from an active magnificationGesture) snd 1.0 (normal scale)
+    var currentScale: CGFloat {
+        let diff = (scaleAdjustment - 1)
+        return storedScale + diff
+    }
+    
+    var scaleAndRotateGesture: some Gesture {
+        let rotationGesture = RotationGesture()
+            .onChanged { angle in
+                self.angleAdjustment = angle.degrees
+            }
+            .onEnded { _ in
+                storedAngle = currentAngle
+                angleAdjustment = 0.0
+            }
+            
+        
+        let magnificationGesture = MagnificationGesture()
+            .onChanged { value in
+                print(value)
+                print(value.magnitude)
+                self.scaleAdjustment = value.magnitude
+            }
+            .onEnded { _ in
+                storedScale = currentScale
+                scaleAdjustment = 1.0
+            }
+
+        return magnificationGesture.simultaneously(with: rotationGesture)
     }
     
     var body: some View {
         baseShape
             .fill(color)
-            .rotationEffect(currentAngle)
+            .rotationEffect(Angle.degrees(currentAngle))
+            .scaleEffect(currentScale)
             .position(x: currentPosition.x, y: currentPosition.y)
-            .gesture(shapDragGesture)
-            .gesture(shapRotateGesture)
+            .gesture(shapeDragGesture)
+            .gesture(scaleAndRotateGesture)
     }
 }
