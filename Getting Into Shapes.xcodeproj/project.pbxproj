@@ -16,6 +16,7 @@
 		B44B5FEE27B60ADF007AF8C1 /* DrawableShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FED27B60ADF007AF8C1 /* DrawableShape.swift */; };
 		B44B5FF327B60D71007AF8C1 /* ShapeCanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FF227B60D71007AF8C1 /* ShapeCanvasViewModel.swift */; };
 		B44B5FF727B617EF007AF8C1 /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FF627B617EF007AF8C1 /* AnyShape.swift */; };
+		B46D608C27B667DC0052ED8D /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D608B27B667DC0052ED8D /* Triangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B44B5FED27B60ADF007AF8C1 /* DrawableShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableShape.swift; sourceTree = "<group>"; };
 		B44B5FF227B60D71007AF8C1 /* ShapeCanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCanvasViewModel.swift; sourceTree = "<group>"; };
 		B44B5FF627B617EF007AF8C1 /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
+		B46D608B27B667DC0052ED8D /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				B44B5FE527B5EAFB007AF8C1 /* ShapeCanvas.swift */,
 				B44B5FE827B5FDB1007AF8C1 /* DragableShape.swift */,
 				B44B5FF627B617EF007AF8C1 /* AnyShape.swift */,
+				B46D608A27B667B90052ED8D /* Custom Shapes */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,6 +109,14 @@
 				B44B5FF227B60D71007AF8C1 /* ShapeCanvasViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B46D608A27B667B90052ED8D /* Custom Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				B46D608B27B667DC0052ED8D /* Triangle.swift */,
+			);
+			path = "Custom Shapes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 				B44B5FE927B5FDB1007AF8C1 /* DragableShape.swift in Sources */,
 				B44B5FD527B4E18D007AF8C1 /* Getting_Into_ShapesApp.swift in Sources */,
 				B44B5FE627B5EAFB007AF8C1 /* ShapeCanvas.swift in Sources */,
+				B46D608C27B667DC0052ED8D /* Triangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

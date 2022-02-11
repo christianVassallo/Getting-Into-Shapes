@@ -73,6 +73,8 @@ class ShapeCanvasViewModel: ObservableObject {
             return AnyShape(base: Ellipse())
         case .capsule:
             return AnyShape(base: Capsule())
+        case .triangle:
+            return AnyShape(base: Triangle())
         }
     }
 }
