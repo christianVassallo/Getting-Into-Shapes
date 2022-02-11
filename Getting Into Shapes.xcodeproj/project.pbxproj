@@ -26,7 +26,7 @@
 		B44B5FDB27B4E191007AF8C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B44B5FDD27B4E191007AF8C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B44B5FE527B5EAFB007AF8C1 /* ShapeCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCanvas.swift; sourceTree = "<group>"; };
-		B44B5FE827B5FDB1007AF8C1 /* DragableShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragableShape.swift; sourceTree = "<group>"; };
+		B44B5FE827B5FDB1007AF8C1 /* DragableShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragableShape.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B44B5FED27B60ADF007AF8C1 /* DrawableShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableShape.swift; sourceTree = "<group>"; };
 		B44B5FF227B60D71007AF8C1 /* ShapeCanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCanvasViewModel.swift; sourceTree = "<group>"; };
 		B44B5FF627B617EF007AF8C1 /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };

@@ -14,23 +14,35 @@ struct DragableShape: View {
     let initialPostion: CGPoint
     let color: Color
     
-    @State var transalation: CGSize = CGSize(width: 0.0, height: 0.0)
+    // the postion of the shape at the end of the previous dragGesture
+    @State var updatedPostion: CGPoint?
     
-    var shapePosition: CGPoint {
-        return CGPoint(x: initialPostion.x + transalation.width, y: initialPostion.y + transalation.height)
-    }
+    // the translation from a currently occuring dragGesture
+    @State var currentTranslation: CGSize = CGSize(width: 0.0, height: 0.0)
     
     var shapDragGesture: some Gesture {
         DragGesture()
+            // update the current translation
             .onChanged { value in
-                self.transalation = value.translation
+                self.currentTranslation = value.translation
             }
+            // update the postion and reset the current translation
+            .onEnded { _ in
+                self.updatedPostion = currentPosition
+                self.currentTranslation = .zero
+            }
+    }
+    
+    // the shapes current postion is calculated using the postion stored at end of previous drag and applying the current drag transalation
+    var currentPosition: CGPoint {
+        let position = updatedPostion ?? initialPostion
+        return CGPoint(x: position.x + currentTranslation.width, y: position.y + currentTranslation.height)
     }
     
     var body: some View {
         baseShape
             .fill(color)
-            .position(x: shapePosition.x, y: shapePosition.y)
+            .position(x: currentPosition.x, y: currentPosition.y)
             .gesture(shapDragGesture)
     }
 }
