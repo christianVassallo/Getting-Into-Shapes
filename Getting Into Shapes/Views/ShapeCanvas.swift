@@ -9,37 +9,16 @@ import SwiftUI
 
 struct ShapeCanvas: View {
     
+    let viewModel = ShapeCanvasViewModel()
+    
     var body: some View {
         
         GeometryReader { geometry in
             
-            DragableShape(
-                baseShape: Circle(),
-                initialPostion: CGPoint(x: (geometry.size.width * 0.30) - 50, y: (geometry.size.height * 0.25) - 50),
-                color: .green
-            )
-            .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-            
-            DragableShape(
-                baseShape: Rectangle(),
-                initialPostion: CGPoint(x: (geometry.size.width * 0.8) - 50, y: (geometry.size.height * 0.5) - 50),
-                color: .red
-            )
-            .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-            
-            DragableShape(
-                baseShape: Capsule(),
-                initialPostion: CGPoint(x: (geometry.size.width * 0.5) - 60, y: (geometry.size.height * 0.75) - 40),
-                color: .blue
-            )
-            .frame(width: 120, height: 80)
-            
-            DragableShape(
-                baseShape: Ellipse(),
-                initialPostion: CGPoint(x: (geometry.size.width * 0.75) - 40, y: (geometry.size.height * 0.30) - 120),
-                color: .orange
-            )
-            .frame(width: 80, height: 120)
+            ForEach(0..<viewModel.shapes.count) { index in
+                // TODO: don't use same position for all shapes
+                viewModel.dragableShape(for: index, position: CGPoint(x: (geometry.size.width * 0.30) - 50, y: (geometry.size.height * 0.25) - 50))
+            }
         }
         
     }

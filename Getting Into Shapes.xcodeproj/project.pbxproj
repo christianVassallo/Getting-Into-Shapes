@@ -14,6 +14,8 @@
 		B44B5FE627B5EAFB007AF8C1 /* ShapeCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FE527B5EAFB007AF8C1 /* ShapeCanvas.swift */; };
 		B44B5FE927B5FDB1007AF8C1 /* DragableShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FE827B5FDB1007AF8C1 /* DragableShape.swift */; };
 		B44B5FEE27B60ADF007AF8C1 /* DrawableShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FED27B60ADF007AF8C1 /* DrawableShape.swift */; };
+		B44B5FF327B60D71007AF8C1 /* ShapeCanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FF227B60D71007AF8C1 /* ShapeCanvasViewModel.swift */; };
+		B44B5FF727B617EF007AF8C1 /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FF627B617EF007AF8C1 /* AnyShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		B44B5FE527B5EAFB007AF8C1 /* ShapeCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCanvas.swift; sourceTree = "<group>"; };
 		B44B5FE827B5FDB1007AF8C1 /* DragableShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragableShape.swift; sourceTree = "<group>"; };
 		B44B5FED27B60ADF007AF8C1 /* DrawableShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableShape.swift; sourceTree = "<group>"; };
+		B44B5FF227B60D71007AF8C1 /* ShapeCanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCanvasViewModel.swift; sourceTree = "<group>"; };
+		B44B5FF627B617EF007AF8C1 /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				B44B5FD427B4E18D007AF8C1 /* Getting_Into_ShapesApp.swift */,
+				B44B5FF127B60D56007AF8C1 /* ViewModels */,
 				B44B5FEC27B60AAE007AF8C1 /* Models */,
 				B44B5FEB27B60AA0007AF8C1 /* Views */,
 				B44B5FD827B4E191007AF8C1 /* Assets.xcassets */,
@@ -82,6 +87,7 @@
 				B44B5FD627B4E18D007AF8C1 /* ContentView.swift */,
 				B44B5FE527B5EAFB007AF8C1 /* ShapeCanvas.swift */,
 				B44B5FE827B5FDB1007AF8C1 /* DragableShape.swift */,
+				B44B5FF627B617EF007AF8C1 /* AnyShape.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,6 +98,14 @@
 				B44B5FED27B60ADF007AF8C1 /* DrawableShape.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B44B5FF127B60D56007AF8C1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B44B5FF227B60D71007AF8C1 /* ShapeCanvasViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,8 +177,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44B5FF327B60D71007AF8C1 /* ShapeCanvasViewModel.swift in Sources */,
 				B44B5FEE27B60ADF007AF8C1 /* DrawableShape.swift in Sources */,
 				B44B5FD727B4E18D007AF8C1 /* ContentView.swift in Sources */,
+				B44B5FF727B617EF007AF8C1 /* AnyShape.swift in Sources */,
 				B44B5FE927B5FDB1007AF8C1 /* DragableShape.swift in Sources */,
 				B44B5FD527B4E18D007AF8C1 /* Getting_Into_ShapesApp.swift in Sources */,
 				B44B5FE627B5EAFB007AF8C1 /* ShapeCanvas.swift in Sources */,
