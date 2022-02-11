@@ -16,11 +16,9 @@ struct ShapeCanvas: View {
         GeometryReader { geometry in
             
             ForEach(0..<viewModel.shapes.count) { index in
-                viewModel.dragableShape(
+                viewModel.createDragableShape(
                     for: index,
-                    position: viewModel.randomPosition(
-                        in: CGRect(x: 0, y: 0, width: geometry.size.width, height: geometry.size.height)
-                    )
+                    in: CGRect(x: 0, y: 0, width: geometry.size.width, height: geometry.size.height)
                 )
             }
         }
