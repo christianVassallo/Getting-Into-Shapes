@@ -11,7 +11,7 @@
 		B44B5FD727B4E18D007AF8C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FD627B4E18D007AF8C1 /* ContentView.swift */; };
 		B44B5FD927B4E191007AF8C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44B5FD827B4E191007AF8C1 /* Assets.xcassets */; };
 		B44B5FDC27B4E191007AF8C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44B5FDB27B4E191007AF8C1 /* Preview Assets.xcassets */; };
-		B44B5FE627B5EAFB007AF8C1 /* ShapesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FE527B5EAFB007AF8C1 /* ShapesView.swift */; };
+		B44B5FE627B5EAFB007AF8C1 /* ShapeCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FE527B5EAFB007AF8C1 /* ShapeCanvas.swift */; };
 		B44B5FE927B5FDB1007AF8C1 /* DragableShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FE827B5FDB1007AF8C1 /* DragableShape.swift */; };
 		B44B5FEE27B60ADF007AF8C1 /* DrawableShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FED27B60ADF007AF8C1 /* DrawableShape.swift */; };
 /* End PBXBuildFile section */
@@ -23,7 +23,7 @@
 		B44B5FD827B4E191007AF8C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B44B5FDB27B4E191007AF8C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B44B5FDD27B4E191007AF8C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B44B5FE527B5EAFB007AF8C1 /* ShapesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesView.swift; sourceTree = "<group>"; };
+		B44B5FE527B5EAFB007AF8C1 /* ShapeCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCanvas.swift; sourceTree = "<group>"; };
 		B44B5FE827B5FDB1007AF8C1 /* DragableShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragableShape.swift; sourceTree = "<group>"; };
 		B44B5FED27B60ADF007AF8C1 /* DrawableShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				B44B5FD627B4E18D007AF8C1 /* ContentView.swift */,
-				B44B5FE527B5EAFB007AF8C1 /* ShapesView.swift */,
+				B44B5FE527B5EAFB007AF8C1 /* ShapeCanvas.swift */,
 				B44B5FE827B5FDB1007AF8C1 /* DragableShape.swift */,
 			);
 			path = Views;
@@ -167,7 +167,7 @@
 				B44B5FD727B4E18D007AF8C1 /* ContentView.swift in Sources */,
 				B44B5FE927B5FDB1007AF8C1 /* DragableShape.swift in Sources */,
 				B44B5FD527B4E18D007AF8C1 /* Getting_Into_ShapesApp.swift in Sources */,
-				B44B5FE627B5EAFB007AF8C1 /* ShapesView.swift in Sources */,
+				B44B5FE627B5EAFB007AF8C1 /* ShapeCanvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

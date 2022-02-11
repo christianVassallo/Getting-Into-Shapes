@@ -1,5 +1,5 @@
 //
-//  ShapesView.swift
+//  ShapeCanvas.swift
 //  Getting Into Shapes
 //
 //  Created by Christian Vassallo on 11/2/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShapesView: View {
+struct ShapeCanvas: View {
     
     var body: some View {
         
