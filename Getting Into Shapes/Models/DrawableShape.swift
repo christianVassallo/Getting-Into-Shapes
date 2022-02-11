@@ -10,7 +10,7 @@ import SwiftUI
 struct DrawableShape {
     
     enum ShapeType: Int, CaseIterable {
-        case circle, rect, elipse, capsule, triangle, hexagon, Trapezoid
+        case circle, rect, elipse, capsule, triangle, hexagon, trapezoid
         
         static func random() -> Self {
             
