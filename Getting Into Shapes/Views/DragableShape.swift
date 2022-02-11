@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct DragableShape<S: Shape>: View {
+// DragableShape handles the logic to drag a Shape view around the screen
+struct DragableShape: View {
     
-    let baseShape: S
+    let baseShape: AnyShape
     let initialPostion: CGPoint
     let color: Color
     
