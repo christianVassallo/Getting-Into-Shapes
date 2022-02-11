@@ -29,15 +29,21 @@ struct ShapeCanvasViewModel {
             .frame(width: shape.size.width, height: shape.size.height)
     }
     
-    // given a rect returns a random postion for given shape, accounting for the shapes size
+    // returns a random postion for a given `shape` and `rect`, ensuring the shape will be fully visable on the screen
     public func randomPosition(for shape: DrawableShape, in rect: CGRect) -> CGPoint {
         
-        let safeMaxX = max(0, rect.width - shape.size.width)
-        let safeMaxY = max(0, rect.height - shape.size.height)
+        // a max center position that allows the shape to be fully visable on screen
+        let maxX = rect.width - (shape.size.width / 2)
+        let maxY = rect.height - (shape.size.height / 2)
         
+        // a min center position that allows the shape to be fully visable on screen
+        let minX = rect.minX + (shape.size.width / 2)
+        let minY = rect.minY + (shape.size.height / 2)
+        
+        // use `max` to ensure upperbound is never less than lowerbound
         return CGPoint(
-            x: CGFloat.random(in: 0...safeMaxX),
-            y: CGFloat.random(in: 0...safeMaxY)
+            x: CGFloat.random(in: minX...max(minX, maxX)),
+            y: CGFloat.random(in: minY...max(minY, maxY))
         )
     }
     
