@@ -10,10 +10,13 @@ import SwiftUI
 struct ShapeCanvasViewModel {
     
     public var shapes: [DrawableShape] = [
-        DrawableShape(color: .green, size: CGSize(width: 100, height: 100), shapeType: .circle),
-        DrawableShape(color: .red, size: CGSize(width: 100, height: 100), shapeType: .rect),
-        DrawableShape(color: .blue, size: CGSize(width: 120, height: 80), shapeType: .capsule),
-        DrawableShape(color: .orange, size: CGSize(width: 80, height: 120), shapeType: .elipse)
+        DrawableShape.random(),
+        DrawableShape.random(),
+        DrawableShape.random(),
+        DrawableShape.random(),
+        DrawableShape.random(),
+        DrawableShape.random(),
+        DrawableShape.random()
     ]
     
     // creates a shap view given an index and a rect for it to be positioned in
