@@ -17,6 +17,7 @@
 		B44B5FF327B60D71007AF8C1 /* ShapeCanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FF227B60D71007AF8C1 /* ShapeCanvasViewModel.swift */; };
 		B44B5FF727B617EF007AF8C1 /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B5FF627B617EF007AF8C1 /* AnyShape.swift */; };
 		B46D608C27B667DC0052ED8D /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D608B27B667DC0052ED8D /* Triangle.swift */; };
+		B46D608F27B669040052ED8D /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D608E27B669040052ED8D /* Hexagon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B44B5FF227B60D71007AF8C1 /* ShapeCanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCanvasViewModel.swift; sourceTree = "<group>"; };
 		B44B5FF627B617EF007AF8C1 /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
 		B46D608B27B667DC0052ED8D /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		B46D608E27B669040052ED8D /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B46D608B27B667DC0052ED8D /* Triangle.swift */,
+				B46D608E27B669040052ED8D /* Hexagon.swift */,
 			);
 			path = "Custom Shapes";
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			files = (
 				B44B5FF327B60D71007AF8C1 /* ShapeCanvasViewModel.swift in Sources */,
 				B44B5FEE27B60ADF007AF8C1 /* DrawableShape.swift in Sources */,
+				B46D608F27B669040052ED8D /* Hexagon.swift in Sources */,
 				B44B5FD727B4E18D007AF8C1 /* ContentView.swift in Sources */,
 				B44B5FF727B617EF007AF8C1 /* AnyShape.swift in Sources */,
 				B44B5FE927B5FDB1007AF8C1 /* DragableShape.swift in Sources */,
