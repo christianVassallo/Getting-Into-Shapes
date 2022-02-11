@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShapeCanvas: View {
     
-    let viewModel = ShapeCanvasViewModel()
+    @ObservedObject private var viewModel = ShapeCanvasViewModel()
     
     var body: some View {
         

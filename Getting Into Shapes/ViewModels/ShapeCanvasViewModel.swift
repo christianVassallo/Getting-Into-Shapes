@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ShapeCanvasViewModel {
+class ShapeCanvasViewModel: ObservableObject {
     
-    public var shapes: [DrawableShape] = [
+    @Published public var shapes: [DrawableShape] = [
         DrawableShape.random(),
         DrawableShape.random(),
         DrawableShape.random(),
