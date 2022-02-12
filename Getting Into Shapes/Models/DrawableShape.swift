@@ -11,7 +11,7 @@ struct DrawableShape {
     
     // Enum containing all the supported shape types
     enum ShapeType: Int, CaseIterable {
-        case circle, rect, elipse, capsule, triangle, hexagon, trapezoid
+        case circle, rect, elipse, capsule, triangle, hexagon, trapezoid, pacMan
         
         // convenience func to return a random case
         static func random() -> Self {
@@ -61,6 +61,8 @@ extension DrawableShape {
             return AnyShape(base: Hexagon())
         case .trapezoid:
             return AnyShape(base: Trapezoid())
+        case .pacMan:
+            return AnyShape(base: PacmanShape())
         }
     }
 }
