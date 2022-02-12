@@ -23,7 +23,7 @@ class ShapeCanvasViewModel: ObservableObject {
     var shapePositions: [String: CGPoint] = [:]
     
     // creates a shap view given an index and a rect for it to be positioned in
-    public func createDragableShape(for index: Int, in rect: CGRect) -> some View {
+    public func createInteractableShape(for index: Int, in rect: CGRect) -> some View {
 
         let shape = shapes[index]
 
@@ -37,7 +37,7 @@ class ShapeCanvasViewModel: ObservableObject {
             shapePositions[shape.id] = position
         }
         
-        return DragableShape(baseShape: baseShape, initialPostion: position, color: shape.color)
+        return InteractableShape(baseShape: baseShape, initialPostion: position, color: shape.color)
             .frame(width: shape.size.width, height: shape.size.height)
     }
     

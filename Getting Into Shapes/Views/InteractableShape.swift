@@ -1,5 +1,5 @@
 //
-//  DragableShape.swift
+//  InteractableShape.swift
 //  Getting Into Shapes
 //
 //  Created by Christian Vassallo on 11/2/22.
@@ -7,8 +7,11 @@
 
 import SwiftUI
 
-// DragableShape handles the logic to drag a Shape view around the screen
-struct DragableShape: View {
+// InteractableShape handles the logic to:
+// - drag a shape view around the screen
+// - rotate a shape view in place
+// - scale a shape view in place
+struct InteractableShape: View {
     
     let baseShape: AnyShape
     let initialPostion: CGPoint

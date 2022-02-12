@@ -19,7 +19,7 @@ struct ShapeCanvas: View {
                 // ensure has size before rendering shapes
                 if (geometry.size != .zero) {
                     ForEach(0..<viewModel.shapes.count, id: \.self) { index in
-                        viewModel.createDragableShape(
+                        viewModel.createInteractableShape(
                             for: index,
                             in: CGRect(x: geometry.frame(in: .global).minX, y: geometry.frame(in: .global).minY, width: geometry.size.width, height: geometry.size.height)
                         )
