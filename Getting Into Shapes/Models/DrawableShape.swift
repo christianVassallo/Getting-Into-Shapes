@@ -9,11 +9,12 @@ import SwiftUI
 
 struct DrawableShape {
     
+    // Enum containing all the supported shape types
     enum ShapeType: Int, CaseIterable {
         case circle, rect, elipse, capsule, triangle, hexagon, trapezoid
         
+        // convenience func to return a random case
         static func random() -> Self {
-            
             let rawValue = Int.random(in: 0..<ShapeType.allCases.count)
             return ShapeType(rawValue: rawValue) ?? .circle
         }
@@ -27,6 +28,7 @@ struct DrawableShape {
 
 extension DrawableShape {
     
+    // convenience func to generate a new instance of DrawableShape with random data
     static func random() -> DrawableShape {
         
         let randColor = Color(
@@ -40,5 +42,25 @@ extension DrawableShape {
         let randType = ShapeType.random()
         
         return DrawableShape(color: randColor, size: randSize, shapeType: randType)
+    }
+    
+    // convenience computed variable to return a Shape View of an appropriate type
+    public var baseView: AnyShape {
+        switch self.shapeType {
+        case .circle:
+            return AnyShape(base: Circle())
+        case .rect:
+            return AnyShape(base: Rectangle())
+        case .elipse:
+            return AnyShape(base: Ellipse())
+        case .capsule:
+            return AnyShape(base: Capsule())
+        case .triangle:
+            return AnyShape(base: Triangle())
+        case .hexagon:
+            return AnyShape(base: Hexagon())
+        case .trapezoid:
+            return AnyShape(base: Trapezoid())
+        }
     }
 }

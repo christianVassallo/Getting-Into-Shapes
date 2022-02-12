@@ -26,8 +26,6 @@ class ShapeCanvasViewModel: ObservableObject {
     public func createInteractableShape(for index: Int, in rect: CGRect) -> some View {
 
         let shape = shapes[index]
-
-        let baseShape = shapeView(for: shape.shapeType)
         
         // retrieve stored shape position or generate a new position
         let position = shapePositions[shape.id] ?? randomPosition(for: shape, in: rect)
@@ -37,7 +35,7 @@ class ShapeCanvasViewModel: ObservableObject {
             shapePositions[shape.id] = position
         }
         
-        return InteractableShape(baseShape: baseShape, initialPostion: position, color: shape.color)
+        return InteractableShape(baseShape: shape.baseView, initialPostion: position, color: shape.color)
             .frame(width: shape.size.width, height: shape.size.height)
     }
     
@@ -61,24 +59,5 @@ class ShapeCanvasViewModel: ObservableObject {
     
     public func createRandomShape() {
         shapes.append(DrawableShape.random())
-    }
-    
-    private func shapeView(for type: DrawableShape.ShapeType) -> AnyShape {
-        switch type {
-        case .circle:
-            return AnyShape(base: Circle())
-        case .rect:
-            return AnyShape(base: Rectangle())
-        case .elipse:
-            return AnyShape(base: Ellipse())
-        case .capsule:
-            return AnyShape(base: Capsule())
-        case .triangle:
-            return AnyShape(base: Triangle())
-        case .hexagon:
-            return AnyShape(base: Hexagon())
-        case .trapezoid:
-            return AnyShape(base: Trapezoid())
-        }
     }
 }
