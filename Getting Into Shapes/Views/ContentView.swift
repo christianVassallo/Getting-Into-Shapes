@@ -14,6 +14,8 @@ struct ContentView: View {
                 .navigationTitle("Getting Into Shapes")
                 .navigationBarTitleDisplayMode(.inline)
         }
+        // consistent navigationView UI between iPhone and iPad
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
