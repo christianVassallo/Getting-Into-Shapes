@@ -78,8 +78,6 @@ struct InteractableShape: View {
         
         let magnificationGesture = MagnificationGesture()
             .onChanged { value in
-                print(value)
-                print(value.magnitude)
                 self.scaleAdjustment = value.magnitude
             }
             .onEnded { _ in
