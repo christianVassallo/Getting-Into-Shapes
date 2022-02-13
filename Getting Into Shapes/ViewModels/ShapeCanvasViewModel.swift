@@ -9,17 +9,15 @@ import SwiftUI
 
 class ShapeCanvasViewModel: ObservableObject {
     
-    @Published public private(set) var shapes: [DrawableShape] = [
-        DrawableShape.random(),
-        DrawableShape.random(),
-        DrawableShape.random(),
-        DrawableShape.random(),
-        DrawableShape.random(),
-        DrawableShape.random(),
-        DrawableShape.random()
-    ]
+    @Published public private(set) var shapes = [DrawableShape]()
     
     @Published public private(set) var selectedId: String?
+    
+    init(initialShapeCount: Int = 5) {
+        for _ in (1...initialShapeCount) {
+            createRandomShape()
+        }
+    }
     
     // dict of shape id to position
     var shapePositions: [String: CGPoint] = [:]
