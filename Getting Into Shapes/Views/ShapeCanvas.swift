@@ -21,7 +21,10 @@ struct ShapeCanvas: View {
                     ForEach(0..<viewModel.shapes.count, id: \.self) { index in
                         viewModel.createInteractableShape(
                             for: index,
-                            in: CGRect(x: geometry.frame(in: .global).minX, y: geometry.frame(in: .global).minY, width: geometry.size.width, height: geometry.size.height)
+                            in: CGRect(x: geometry.frame(in: .global).minX, y: geometry.frame(in: .global).minY, width: geometry.size.width, height: geometry.size.height),
+                            onTap: {
+                                viewModel.selectShape(at: index)
+                            }
                         )
                     }
                 }
@@ -42,6 +45,7 @@ struct ShapeCanvas: View {
                         } label: {
                             Text("Edit Shape")
                         }
+                        .disabled(!viewModel.editMenuIsEnable)
                     }
                     .padding()
                 }

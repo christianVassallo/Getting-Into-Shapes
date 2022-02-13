@@ -19,11 +19,13 @@ class ShapeCanvasViewModel: ObservableObject {
         DrawableShape.random()
     ]
     
+    @Published public var selectedIndex: Int?
+    
     // dict of shape id to position
     var shapePositions: [String: CGPoint] = [:]
     
     // creates a shap view given an index and a rect for it to be positioned in
-    public func createInteractableShape(for index: Int, in rect: CGRect) -> some View {
+    public func createInteractableShape(for index: Int, in rect: CGRect, onTap: @escaping (() -> Void)) -> some View {
 
         let shape = shapes[index]
         
@@ -35,7 +37,7 @@ class ShapeCanvasViewModel: ObservableObject {
             shapePositions[shape.id] = position
         }
         
-        return InteractableShape(baseShape: shape.baseView, initialPostion: position, color: shape.color)
+        return InteractableShape(baseShape: shape.baseView, initialPostion: position, color: shape.color, onTap: onTap)
             .frame(width: shape.size.width, height: shape.size.height)
     }
     
@@ -59,5 +61,13 @@ class ShapeCanvasViewModel: ObservableObject {
     
     public func createRandomShape() {
         shapes.append(DrawableShape.random())
+    }
+    
+    public func selectShape(at index: Int) {
+        selectedIndex = index
+    }
+    
+    public var editMenuIsEnable: Bool {
+        return selectedIndex != nil
     }
 }

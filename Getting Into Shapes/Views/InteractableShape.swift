@@ -17,6 +17,8 @@ struct InteractableShape: View {
     let initialPostion: CGPoint
     let color: Color
     
+    let onTap: (() -> Void)
+    
     // MARK: - position/ drag gesture
     
     // the postion of the shape at the end of the previous dragGesture
@@ -96,5 +98,8 @@ struct InteractableShape: View {
             .position(x: currentPosition.x, y: currentPosition.y)
             .gesture(shapeDragGesture)
             .gesture(scaleAndRotateGesture)
+            .onTapGesture {
+                onTap()
+            }
     }
 }
