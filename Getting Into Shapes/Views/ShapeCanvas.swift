@@ -39,7 +39,8 @@ struct ShapeCanvas: View {
                     ShapeToolbar(
                         editMenuIsEnabled: viewModel.editMenuIsEnable,
                         createHandler: { viewModel.createRandomShape() },
-                        deleteHandler: { viewModel.deleteSelectedShape() }
+                        deleteHandler: { viewModel.deleteSelectedShape() },
+                        colorChangeHandler: { viewModel.changeSelectedShapeColor() }
                     )
                         .padding()
                 }

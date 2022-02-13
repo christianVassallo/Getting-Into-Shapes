@@ -21,7 +21,7 @@ struct DrawableShape {
     }
     
     let id = UUID().uuidString
-    let color: Color
+    var color: Color
     let size: CGSize
     let shapeType: ShapeType
 }
@@ -31,11 +31,7 @@ extension DrawableShape {
     // convenience func to generate a new instance of DrawableShape with random data
     static func random() -> DrawableShape {
         
-        let randColor = Color(
-            red:   .random(in: 0...1),
-            green: .random(in: 0...1),
-            blue:  .random(in: 0...1)
-        )
+        let randColor = Color.random()
         
         let randSize = CGSize(width: .random(in: 50...150), height: .random(in: 50...150))
         
@@ -64,5 +60,15 @@ extension DrawableShape {
         case .pacMan:
             return AnyShape(base: PacmanShape())
         }
+    }
+}
+
+extension Color {
+    static func random() -> Color {
+        return Color(
+            red:   .random(in: 0...1),
+            green: .random(in: 0...1),
+            blue:  .random(in: 0...1)
+        )
     }
 }

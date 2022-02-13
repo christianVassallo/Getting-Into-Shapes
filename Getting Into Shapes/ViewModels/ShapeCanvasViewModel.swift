@@ -86,4 +86,13 @@ class ShapeCanvasViewModel: ObservableObject {
         shapes.remove(at: index)
         clearSelection()
     }
+    
+    public func changeSelectedShapeColor() {
+        guard let selected = selectedId,
+              let index = shapes.firstIndex(where: { $0.id == selected }) else {
+            return
+        }
+
+        shapes[index].color = Color.random()
+    }
 }

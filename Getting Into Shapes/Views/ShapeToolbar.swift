@@ -12,6 +12,7 @@ struct ShapeToolbar: View {
     let editMenuIsEnabled: Bool
     let createHandler: (() -> Void)
     let deleteHandler: (() -> Void)
+    let colorChangeHandler: (() -> Void)
     
     var body: some View {
         
@@ -27,6 +28,15 @@ struct ShapeToolbar: View {
             }) {
                 Text("Delete")
                 Image(systemName: "trash")
+            }
+            
+            Divider()
+            
+            Button(action: {
+                colorChangeHandler()
+            }) {
+                Text("Change Color")
+                Image(systemName: "paintpalette")
             }
         } label: {
             Text("Edit Shape")
