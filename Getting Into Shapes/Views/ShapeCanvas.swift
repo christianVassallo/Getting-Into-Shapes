@@ -18,12 +18,12 @@ struct ShapeCanvas: View {
                 
                 // ensure has size before rendering shapes
                 if (geometry.size != .zero) {
-                    ForEach(0..<viewModel.shapes.count, id: \.self) { index in
+                    ForEach(viewModel.shapes, id: \.id) { shape in
                         viewModel.createInteractableShape(
-                            for: index,
+                            for: shape,
                             in: CGRect(x: geometry.frame(in: .global).minX, y: geometry.frame(in: .global).minY, width: geometry.size.width, height: geometry.size.height),
                             onTap: {
-                                viewModel.selectShape(at: index)
+                                viewModel.selectShape(shape)
                             }
                         )
                     }

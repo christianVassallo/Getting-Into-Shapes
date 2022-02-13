@@ -19,16 +19,14 @@ class ShapeCanvasViewModel: ObservableObject {
         DrawableShape.random()
     ]
     
-    @Published public private(set) var selectedIndex: Int?
+    @Published public private(set) var selectedId: String?
     
     // dict of shape id to position
     var shapePositions: [String: CGPoint] = [:]
     
-    // creates a shap view given an index and a rect for it to be positioned in
-    public func createInteractableShape(for index: Int, in rect: CGRect, onTap: @escaping (() -> Void)) -> some View {
+    // creates a shap view given a DrawableShape and a rect for it to be positioned in
+    public func createInteractableShape(for shape: DrawableShape, in rect: CGRect, onTap: @escaping (() -> Void)) -> some View {
 
-        let shape = shapes[index]
-        
         // retrieve stored shape position or generate a new position
         let position = shapePositions[shape.id] ?? randomPosition(for: shape, in: rect)
         
@@ -41,7 +39,7 @@ class ShapeCanvasViewModel: ObservableObject {
             baseShape: shape.baseView,
             initialPostion: position,
             color: shape.color,
-            isSelected: index == selectedIndex,
+            isSelected: shape.id == selectedId,
             onTap: onTap
         )
         .frame(width: shape.size.width, height: shape.size.height)
@@ -69,20 +67,25 @@ class ShapeCanvasViewModel: ObservableObject {
         shapes.append(DrawableShape.random())
     }
     
-    public func selectShape(at index: Int) {
-        selectedIndex = index
+    public func selectShape(_ shape: DrawableShape) {
+        selectedId = shape.id
     }
     
     public func clearSelection() {
-        selectedIndex = nil
+        selectedId = nil
     }
     
     public var editMenuIsEnable: Bool {
-        return selectedIndex != nil
+        return selectedId != nil
     }
     
     public func deleteSelectedShape() {
-        guard let index = selectedIndex else { return }
+        guard let selected = selectedId,
+              let index = shapes.firstIndex(where: { $0.id == selected }) else {
+            return
+        }
+        
         shapes.remove(at: index)
+        clearSelection()
     }
 }
