@@ -26,14 +26,22 @@ struct ShapeCanvas: View {
                     }
                 }
             }
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Group {
+                        Button("Create") {
+                            viewModel.createRandomShape()
+                        }
             
-            Button(
-                "Create Random Shape",
-                action: {
-                    viewModel.createRandomShape()
+                        Spacer()
+                        
+                        Button("Edit Shape") {
+                            print("Show context menu")
+                        }
+                    }
+                    .padding()
                 }
-            )
-            .padding(.bottom)
+            }
         }
     }
 }
