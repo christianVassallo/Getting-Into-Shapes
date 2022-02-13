@@ -36,26 +36,12 @@ struct ShapeCanvas: View {
             }
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
-                    Group {
-                        Button("Create") {
-                            viewModel.createRandomShape()
-                        }
-            
-                        Spacer()
-
-                        Menu {
-                            Button(action: {
-                                viewModel.deleteSelectedShape()
-                            }) {
-                                Text("Delete")
-                                Image(systemName: "trash")
-                            }
-                        } label: {
-                            Text("Edit Shape")
-                        }
-                        .disabled(!viewModel.editMenuIsEnable)
-                    }
-                    .padding()
+                    ShapeToolbar(
+                        editMenuIsEnabled: viewModel.editMenuIsEnable,
+                        createHandler: { viewModel.createRandomShape() },
+                        deleteHandler: { viewModel.deleteSelectedShape() }
+                    )
+                        .padding()
                 }
             }
         }

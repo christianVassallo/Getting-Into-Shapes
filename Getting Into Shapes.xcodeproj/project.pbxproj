@@ -20,6 +20,7 @@
 		B46D608F27B669040052ED8D /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D608E27B669040052ED8D /* Hexagon.swift */; };
 		B46D609227B669B40052ED8D /* Trapezoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D609127B669B40052ED8D /* Trapezoid.swift */; };
 		B46E133627B742C600265663 /* PacmanShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E133527B742C600265663 /* PacmanShape.swift */; };
+		B4A175BE27B8CD600049D3F8 /* ShapeToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A175BD27B8CD600049D3F8 /* ShapeToolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B46D608E27B669040052ED8D /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
 		B46D609127B669B40052ED8D /* Trapezoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trapezoid.swift; sourceTree = "<group>"; };
 		B46E133527B742C600265663 /* PacmanShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacmanShape.swift; sourceTree = "<group>"; };
+		B4A175BD27B8CD600049D3F8 /* ShapeToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeToolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				B44B5FD627B4E18D007AF8C1 /* ContentView.swift */,
 				B44B5FE527B5EAFB007AF8C1 /* ShapeCanvas.swift */,
+				B4A175BD27B8CD600049D3F8 /* ShapeToolbar.swift */,
 				B44B5FE827B5FDB1007AF8C1 /* InteractableShape.swift */,
 				B44B5FF627B617EF007AF8C1 /* AnyShape.swift */,
 				B46D608A27B667B90052ED8D /* Custom Shapes */,
@@ -206,6 +209,7 @@
 				B46E133627B742C600265663 /* PacmanShape.swift in Sources */,
 				B44B5FD527B4E18D007AF8C1 /* Getting_Into_ShapesApp.swift in Sources */,
 				B44B5FE627B5EAFB007AF8C1 /* ShapeCanvas.swift in Sources */,
+				B4A175BE27B8CD600049D3F8 /* ShapeToolbar.swift in Sources */,
 				B46D608C27B667DC0052ED8D /* Triangle.swift in Sources */,
 				B46D609227B669B40052ED8D /* Trapezoid.swift in Sources */,
 			);
