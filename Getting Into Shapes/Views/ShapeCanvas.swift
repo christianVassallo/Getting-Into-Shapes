@@ -44,8 +44,11 @@ struct ShapeCanvas: View {
                         Spacer()
 
                         Menu {
-                            Button("TODO") {
-                                print("do somethig")
+                            Button(action: {
+                                viewModel.deleteSelectedShape()
+                            }) {
+                                Text("Delete")
+                                Image(systemName: "trash")
                             }
                         } label: {
                             Text("Edit Shape")

@@ -74,4 +74,9 @@ class ShapeCanvasViewModel: ObservableObject {
     public var editMenuIsEnable: Bool {
         return selectedIndex != nil
     }
+    
+    public func deleteSelectedShape() {
+        guard let index = selectedIndex else { return }
+        shapes.remove(at: index)
+    }
 }
