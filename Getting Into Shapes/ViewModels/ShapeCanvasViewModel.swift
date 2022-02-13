@@ -9,7 +9,7 @@ import SwiftUI
 
 class ShapeCanvasViewModel: ObservableObject {
     
-    @Published public var shapes: [DrawableShape] = [
+    @Published public private(set) var shapes: [DrawableShape] = [
         DrawableShape.random(),
         DrawableShape.random(),
         DrawableShape.random(),
@@ -19,7 +19,7 @@ class ShapeCanvasViewModel: ObservableObject {
         DrawableShape.random()
     ]
     
-    @Published public var selectedIndex: Int?
+    @Published public private(set) var selectedIndex: Int?
     
     // dict of shape id to position
     var shapePositions: [String: CGPoint] = [:]
