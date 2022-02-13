@@ -37,8 +37,14 @@ class ShapeCanvasViewModel: ObservableObject {
             shapePositions[shape.id] = position
         }
         
-        return InteractableShape(baseShape: shape.baseView, initialPostion: position, color: shape.color, onTap: onTap)
-            .frame(width: shape.size.width, height: shape.size.height)
+        return InteractableShape(
+            baseShape: shape.baseView,
+            initialPostion: position,
+            color: shape.color,
+            isSelected: index == selectedIndex,
+            onTap: onTap
+        )
+        .frame(width: shape.size.width, height: shape.size.height)
     }
     
     // returns a random postion for a given `shape` and `rect`, ensuring the shape will be fully visable on the screen

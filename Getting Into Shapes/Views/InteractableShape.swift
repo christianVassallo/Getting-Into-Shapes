@@ -16,6 +16,7 @@ struct InteractableShape: View {
     let baseShape: AnyShape
     let initialPostion: CGPoint
     let color: Color
+    let isSelected: Bool
     
     let onTap: (() -> Void)
     
@@ -90,16 +91,29 @@ struct InteractableShape: View {
         return magnificationGesture.simultaneously(with: rotationGesture)
     }
     
+    // MARK: - UI
     var body: some View {
-        baseShape
-            .fill(color)
-            .rotationEffect(Angle.degrees(currentAngle))
-            .scaleEffect(currentScale)
-            .position(x: currentPosition.x, y: currentPosition.y)
-            .gesture(shapeDragGesture)
-            .gesture(scaleAndRotateGesture)
-            .onTapGesture {
-                onTap()
+        ZStack {
+            // main shape
+            baseShape
+                .fill(color)
+                .rotationEffect(Angle.degrees(currentAngle))
+                .scaleEffect(currentScale)
+                .position(x: currentPosition.x, y: currentPosition.y)
+                .gesture(shapeDragGesture)
+                .gesture(scaleAndRotateGesture)
+                .onTapGesture {
+                    onTap()
+                }
+            
+            // shape outline (if selected)
+            if isSelected {
+                baseShape
+                    .stroke(Color.blue, style: StrokeStyle(lineWidth: 2, dash: [5]))
+                    .rotationEffect(Angle.degrees(currentAngle))
+                    .scaleEffect(currentScale + 0.1)
+                    .position(x: currentPosition.x, y: currentPosition.y)
             }
+        }
     }
 }
