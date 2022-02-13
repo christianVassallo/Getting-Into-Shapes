@@ -34,9 +34,13 @@ struct ShapeCanvas: View {
                         }
             
                         Spacer()
-                        
-                        Button("Edit Shape") {
-                            print("Show context menu")
+
+                        Menu {
+                            Button("TODO") {
+                                print("do somethig")
+                            }
+                        } label: {
+                            Text("Edit Shape")
                         }
                     }
                     .padding()
