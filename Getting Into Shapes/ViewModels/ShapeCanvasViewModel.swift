@@ -67,6 +67,10 @@ class ShapeCanvasViewModel: ObservableObject {
         selectedIndex = index
     }
     
+    public func clearSelection() {
+        selectedIndex = nil
+    }
+    
     public var editMenuIsEnable: Bool {
         return selectedIndex != nil
     }

@@ -29,6 +29,11 @@ struct ShapeCanvas: View {
                     }
                 }
             }
+            // contentShape required to add tapGesture to a container view
+            .contentShape(Rectangle())
+            .onTapGesture {
+                viewModel.clearSelection()
+            }
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Group {
